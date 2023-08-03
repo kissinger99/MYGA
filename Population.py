@@ -21,8 +21,11 @@ class Population:
     def print_population(self):
         for individual in self.individuals:
             print(individual)
-    def population_fitness_average(self):
-        scores = []
+    def population_total_fitness(self):
+        total_score = 0
         for individual in self.individuals:
-            scores.append(individual.fitness)
-        return mean(scores)
+            total_score += individual.fitness()
+        return total_score
+    def population_fitness_average(self):
+        tot_fitness = self.population_total_fitness()
+        return tot_fitness/self.population_size
