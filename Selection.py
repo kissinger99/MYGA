@@ -10,14 +10,13 @@ def roulette_wheel_selection(population):
         if key >= selector:
             return roulette_wheel[key]
 def construct_roulette_wheel(population):
+    current_prob = 0
+    wheel = dict()
     for individual in population.individuals:
-        current_prob = 0
-        wheel = dict()
-        attribute = Individual.fitness() / Population.population_total_fitness()
+        attribute = individual.fitness / population.population_total_fitness()
         current_prob += attribute
-        wheel[attribute] = individual
-        return wheel
-
+        wheel[current_prob] = individual
+    return wheel
 def tournament_selection(population):
     candidates = tournament_candidates(population)
     parent = fittest_in_tournament(candidates)

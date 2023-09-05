@@ -1,3 +1,5 @@
+import Crossover
+import Mutation
 import Selection
 from Population import Population
 
@@ -24,3 +26,9 @@ if __name__ == "__main__":
     print("The Tournament method selected: ")
     print(parent_1)
     print(parent_2)
+
+    # ONE-POINT CROSSOVER
+    child_1, child_2 = Crossover.crossover(parent_1, parent_2, population, "Single")
+
+    # MUTATION CHECK
+    Mutation.mutation(child_1, child_2)

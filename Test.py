@@ -1,25 +1,15 @@
-from Individual import Individual
-from statistics import mean
+import random
 
-population_size = 10
-class Population:
-    def __init__(self):
-        self.population = [] #I had it like this before and I had an error
-        self.average = self.fitness_average()
-    def random_population(self):
-        for i in range(population_size):
-            individual_random = Individual()
-            self.population.append(individual_random)
-        return self.population
-    def fitness_average(self):
-        sum_scores = 0
-        for i in self.population:
-            sum_scores += Individual.fitness
-        return mean(sum_scores)
-    def __str__(self):
-        return "Population Fitness Average = " + str(self.average)
+individual_genetis = ["the idea is great"]
 
-pop_one = Population()
-pop_one.fitness_average()
+# Randomly select a stopping point
+stopping_point = random.randint(1, len(individual_genetis[0]) - 1)
 
-print(pop_one)
+# Divide the list into two parts
+part1 = individual_genetis[0][:stopping_point]
+part2 = individual_genetis[0][stopping_point:]
+
+if __name__ == "__main__":
+    print(len(individual_genetis[0]))
+    print("Part 1:", part1)
+    print("Part 2:", part2)
