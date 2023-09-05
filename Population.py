@@ -2,7 +2,6 @@ import random
 import string
 
 from Individual import Individual
-from statistics import mean
 
 class Population:
     def __init__(self, population_size: int, target: str):
@@ -24,7 +23,7 @@ class Population:
     def population_total_fitness(self):
         total_score = 0
         for individual in self.individuals:
-            total_score += individual.fitness()
+            total_score += individual.fitness
         return total_score
     def population_fitness_average(self):
         tot_fitness = self.population_total_fitness()
