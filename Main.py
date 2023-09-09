@@ -28,7 +28,7 @@ if __name__ == "__main__":
     print(parent_2)
 
     # ONE-POINT CROSSOVER
-    child_1, child_2 = Crossover.crossover(parent_1, parent_2, population, "Single")
+    child_1, child_2 = Crossover.crossover(parent_1, parent_2, Population, "Single")
 
     # MUTATION CHECK
     Mutation.mutation(child_1, child_2)

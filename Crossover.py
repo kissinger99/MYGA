@@ -12,9 +12,9 @@ def crossover(parent_1: Individual, parent_2: Individual, population: Population
     if prob <= crossover_probability:
         match method:
             case "Single":
-                child_1, child_2 = one_point_crossover(parent_1, parent_2, Population)
+                child_1, child_2 = one_point_crossover(parent_1, parent_2, population)
             case "Double":
-                child_1, child_2 = two_point_crossover(parent_1, parent_2, Population)
+                child_1, child_2 = two_point_crossover(parent_1, parent_2, population)
     return child_1, child_2
 
 #ONE-POINT CROSSOVER
