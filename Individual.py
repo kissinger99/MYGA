@@ -1,7 +1,7 @@
 target = ""
 
 class Individual:
-    def __init__(self, genetics: str, target_string: str):
+    def __init__(self, genetics: str):
         global target
 
         if target == "":
@@ -9,6 +9,11 @@ class Individual:
 
         self.genetics = genetics
         self.fitness = self.fitness_score()
+    def set_target(target_string: str):
+        global target
+
+        if target == "":  # If target has not been initialized yet, initialize it
+            target = target_string
     def fitness_score(self):
         score = 0
         genetic_breakdown = list(self.genetics)
